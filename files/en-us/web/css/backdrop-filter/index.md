@@ -7,7 +7,7 @@ browser-compat: css.properties.backdrop-filter
 
 {{CSSRef}}
 
-The **`backdrop-filter`** [CSS](/en-US/docs/Web/CSS) property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
+The **`backdrop-filter`** [CSS](/en-US/docs/Web/CSS) property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect the element or its background needs to be transparent or partially transparent.
 
 {{EmbedInteractiveExample("pages/css/backdrop-filter.html")}}
 
@@ -18,7 +18,7 @@ The **`backdrop-filter`** [CSS](/en-US/docs/Web/CSS) property lets you apply gra
 backdrop-filter: none;
 
 /* URL to SVG filter */
-backdrop-filter: url(commonfilters.svg#filter);
+backdrop-filter: url(common-filters.svg#filter);
 
 /* <filter-function> values */
 backdrop-filter: blur(2px);
@@ -47,7 +47,7 @@ backdrop-filter: unset;
 
 - `none`
   - : No filter is applied to the backdrop.
-- `<filter-function-list>`
+- `<filter-value-list>`
   - : A space-separated list of {{cssxref("&lt;filter-function&gt;")}}s or an [SVG filter](/en-US/docs/Web/SVG/Element/filter) that will be applied to the backdrop. CSS `<filter-function>`s include {{CSSxRef("filter-function/blur", "blur()")}}, {{CSSxRef("filter-function/brightness", "brightness()")}}, {{CSSxRef("filter-function/contrast", "contrast()")}}, {{CSSxRef("filter-function/drop-shadow", "drop-shadow()")}}, {{CSSxRef("filter-function/grayscale", "grayscale()")}}, {{CSSxRef("filter-function/hue-rotate", "hue-rotate()")}}, {{CSSxRef("filter-function/invert", "invert()")}}, {{CSSxRef("filter-function/opacity", "opacity()")}}, {{CSSxRef("filter-function/saturate", "saturate()")}}, and {{CSSxRef("filter-function/sepia", "sepia()")}}.
 
 ## Formal definition
@@ -64,7 +64,7 @@ backdrop-filter: unset;
 
 ```css
 .box {
-  background-color: rgb(255 255 255 / 0.3);
+  background-color: rgb(255 255 255 / 30%);
   backdrop-filter: blur(10px);
 }
 

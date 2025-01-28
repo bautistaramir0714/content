@@ -50,7 +50,7 @@ dc.addEventListener(
 
     messageInputBox.focus();
   },
-  false
+  false,
 );
 ```
 
@@ -66,6 +66,10 @@ dc.onopen = (ev) => {
   messageInputBox.focus();
 };
 ```
+
+## Specifications
+
+{{Specifications}}
 
 ## Browser compatibility
 

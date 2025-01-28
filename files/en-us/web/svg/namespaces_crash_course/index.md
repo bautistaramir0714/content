@@ -62,7 +62,7 @@ By default, parameters don't have a namespace at all. They are only known to be 
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
-  <script xlink:href="cool-script.js" type="text/ecmascript" />
+  <script xlink:href="cool-script.js" type="text/javascript" />
 </svg>
 ```
 
@@ -74,7 +74,7 @@ Note that, in XML, it is an XML error to use a prefix that hasn't been bound to 
 
 As an aside, it's useful to know that namespace prefixes can also be used for element names. This tells the user agent that the particular element (but not its children this time!) belongs to the namespace assigned to the prefix. Knowing this will save you some confusion if you come across markup like in the following example:
 
-```html
+```xml
 <html
   lang="en"
   xmlns="http://www.w3.org/1999/xhtml"
@@ -88,11 +88,14 @@ As an aside, it's useful to know that namespace prefixes can also be used for el
 </html>
 ```
 
+> [!NOTE]
+> This is an {{Glossary("XHTML")}} file, not an HTML file. XML namespaces are not valid in HTML. To try this example, you have to save your file as `.xhtml`.
+
 Note that because a namespace prefix is used for the `<svg:svg>` element and its child `<svg:circle>`, it wasn't necessary to redeclare the default namespace. In general, it is better to redeclare the default namespace rather than prefix lots of elements in this way.
 
 ### Scripting in namespaced XML
 
-Namespaces affect markup and scripting ([and even CSS](/en-US/Docs/Web/CSS/CSS_namespaces/)). If you write scripts for namespaced XML such as SVG, read on.
+Namespaces affect markup and scripting ([and even CSS](/en-US/docs/Web/CSS/CSS_namespaces)). If you write scripts for namespaced XML such as SVG, read on.
 
 The [DOM Level 1](https://www.w3.org/TR/REC-DOM-Level-1/) recommendation was created before the [original Namespaces in XML](https://www.w3.org/TR/REC-xml-names/) recommendation was released; therefore, DOM1 isn't namespace-aware. This causes problems for namespaced XML such as SVG. To resolve these problems, [DOM Level 2 Core](https://www.w3.org/TR/DOM-Level-2-Core/) added namespace-aware equivalents of all the applicable DOM Level 1 methods. When scripting SVG, it is important to use the [namespace-aware methods](https://www.w3.org/TR/DOM-Level-2-Core/core.html#Namespaces-Considerations). The table below lists the DOM1 methods that shouldn't be used in SVG, along with their equivalent DOM2 counterparts that should be used instead.
 
@@ -163,7 +166,7 @@ The [DOM Level 1](https://www.w3.org/TR/REC-DOM-Level-1/) recommendation was cre
       <td>
         <a href="/en-US/docs/Web/API/Document/getElementsByTagNameNS"><code>getElementsByTagNameNS()</code></a
         >
-        (also<a href="/en-US/docs/Web/API/Element/getElementsByTagNameNS">added to Element</a>)
+        (also <a href="/en-US/docs/Web/API/Element/getElementsByTagNameNS">added to Element</a>)
       </td>
     </tr>
     <tr>
@@ -281,7 +284,7 @@ For setting parameters that have a namespace, it is recommended (but not require
 elt.setAttributeNS(
   "http://www.w3.org/1999/xlink",
   "xlink:href",
-  "otherdoc.svg"
+  "other-doc.svg",
 );
 ```
 
@@ -302,7 +305,7 @@ For SVG, HTML, and MathML, the namespace is implied and therefore optional. It i
 
 When writing SVG, it is helpful to use a template that includes all the commonly used namespace declarations when creating new files. If you don't already have one, make one up starting with the following code:
 
-```html
+```xml
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"></svg>

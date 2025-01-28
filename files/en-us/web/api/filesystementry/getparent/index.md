@@ -34,7 +34,7 @@ getParent(successCallback)
 
 None ({{jsxref("undefined")}}).
 
-### Errors
+### Exceptions
 
 - `FileError.INVALID_STATE_ERR`
   - : The operation failed because the file system's state doesn't permit it. This can
@@ -59,9 +59,9 @@ fileEntry.getParent(
   },
   (error) => {
     console.error(
-      `An error occurred: Unable to rename ${fileEntry.name} to newname.html.`
+      `An error occurred: Unable to rename ${fileEntry.name} to newname.html.`,
     );
-  }
+  },
 );
 ```
 

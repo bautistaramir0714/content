@@ -11,10 +11,10 @@ The **`throw()`** method of {{jsxref("Generator")}} instances acts as if a `thro
 
 ## Syntax
 
-<!-- We don't usually add the "generatorObject" subject for methods. However, it is necessary here, because "throw" is a keyword, so otherwise it's invalid syntax. -->
+<!-- We don't usually add the "generatorInstance" subject for methods. However, it is necessary here, because "throw" is a keyword, so otherwise it's invalid syntax. -->
 
 ```js-nolint
-generatorObject.throw(exception)
+generatorInstance.throw(exception)
 ```
 
 ### Parameters
@@ -24,7 +24,7 @@ generatorObject.throw(exception)
 
 ### Return value
 
-If the thrown exception is caught by a [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) and the generator resumes to yield more values, it will return an {{jsxref("Global_Objects/Object", "Object")}} with two properties:
+If the thrown exception is caught by a [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) and the generator resumes to yield more values, it will return an {{jsxref("Object")}} with two properties:
 
 - `done`
   - : A boolean value:
@@ -45,7 +45,7 @@ The `throw()` method, when called, can be seen as if a `throw exception;` statem
 
 ### Using throw()
 
-The following example shows a simple generator and an error that is thrown using the `throw` method. An error can be caught by a {{jsxref("Statements/try...catch", "try...catch")}} block as usual.
+The following example shows a generator and an error that is thrown using the `throw` method. An error can be caught by a {{jsxref("Statements/try...catch", "try...catch")}} block as usual.
 
 ```js
 function* gen() {

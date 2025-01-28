@@ -36,7 +36,7 @@ Create a new pane, and populate it with an HTML page. You could run this code in
 
 ```js
 function onCreated(sidebarPane) {
-  sidebarPane.setPage('sidebar/sidebar.html');
+  sidebarPane.setPage("sidebar/sidebar.html");
 }
 ```
 
@@ -46,7 +46,8 @@ function onCreated(sidebarPane) {
 
 {{Compat}}
 
-> **Note:** This API is based on Chromium's [`chrome.devtools.panels`](https://developer.chrome.com/docs/extensions/reference/devtools_panels/) API.
+> [!NOTE]
+> This API is based on Chromium's [`chrome.devtools.panels`](https://developer.chrome.com/docs/extensions/reference/api/devtools/panels) API.
 
 <!--
 // Copyright 2015 The Chromium Authors. All rights reserved.

@@ -1,6 +1,7 @@
 ---
 title: set:distinct()
 slug: Web/EXSLT/set/distinct
+page-type: exslt-function
 ---
 
 {{XSLTRef}}{{QuickLinksWithSubpages("/en-US/docs/Web/EXSLT")}}
@@ -18,7 +19,7 @@ set:distinct(nodeSet)
 - `nodeSet`
   - : The node-set in which to find unique nodes.
 
-### Returns
+### Return value
 
 A node-set containing the nodes that have unique string values.
 

@@ -1,6 +1,7 @@
 ---
 title: regexp:test()
 slug: Web/EXSLT/regexp/test
+page-type: exslt-function
 ---
 
 {{XSLTRef}}{{QuickLinksWithSubpages("/en-US/docs/Web/EXSLT")}}
@@ -29,7 +30,7 @@ The character flags are:
 - `i`
   - : Case insensitive match<. If this flag is specified, the match is performed in a case insensitive fashion.
 
-### Returns
+### Return value
 
 `true` if the specified regexp matches the test string.
 

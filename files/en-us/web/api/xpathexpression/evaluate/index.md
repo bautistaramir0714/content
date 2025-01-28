@@ -53,7 +53,7 @@ In case result cannot be converted to the specified type, an
 #### NAMESPACE_ERR
 
 If the expression contains namespace prefixes which cannot be resolved by the specified
-{{domxref("XPathNSResolver")}}, a {{domxref("DOMException")}} of type
+`XPathNSResolver`, a {{domxref("DOMException")}} of type
 `NAMESPACE_ERROR` is raised.
 
 #### WRONG_DOCUMENT_ERR
@@ -87,7 +87,7 @@ const evaluator = new XPathEvaluator();
 const expression = evaluator.createExpression("//div");
 const result = expression.evaluate(
   document,
-  XPathResult.ORDERED_NODE_SNAPSHOT_TYPE
+  XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
 );
 document.querySelector("output").textContent = result.snapshotLength;
 ```

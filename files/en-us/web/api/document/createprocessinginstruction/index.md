@@ -20,9 +20,12 @@ createProcessingInstruction(target, data)
 
 ### Parameters
 
-- `piNode` is the resulting {{ domxref("ProcessingInstruction") }} node.
-- `target` is a string containing the first part of the processing instruction (i.e., `<?target … ?>`)
-- `data` is a string containing any information the processing instruction should carry, after the target. The data is up to you, but it can't contain `?>`, since that closes the processing instruction.
+- `piNode`
+  - : The resulting {{ domxref("ProcessingInstruction") }} node.
+- `target`
+  - : A string containing the first part of the processing instruction (i.e., `<?target … ?>`)
+- `data`
+  - : A string containing any information the processing instruction should carry, after the target. The data is up to you, but it can't contain `?>`, since that closes the processing instruction.
 
 ### Return value
 
@@ -43,7 +46,7 @@ None ({{jsxref("undefined")}}).
 const doc = new DOMParser().parseFromString("<foo />", "application/xml");
 const pi = doc.createProcessingInstruction(
   "xml-stylesheet",
-  'href="mycss.css"'
+  'href="mycss.css"',
 );
 
 doc.insertBefore(pi, doc.firstChild);

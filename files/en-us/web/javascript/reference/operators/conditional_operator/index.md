@@ -35,7 +35,7 @@ If `condition` is any of these, the result of the conditional expression will be
 
 ## Examples
 
-### A simple example
+### A basic example
 
 ```js
 const age = 26;
@@ -61,12 +61,12 @@ console.log(greeting(null)); // "Howdy, stranger"
 
 The ternary operator is right-associative, which means it can be "chained" in the following way, similar to an `if … else if … else if … else` chain:
 
-```js
+```js-nolint
 function example() {
   return condition1 ? value1
-        : condition2 ? value2
-        : condition3 ? value3
-        : value4;
+    : condition2 ? value2
+    : condition3 ? value3
+    : value4;
 }
 ```
 
@@ -96,8 +96,8 @@ function example() {
 
 ## See also
 
-- [if statement](/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
-- [Nullish coalescing operator](/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
-- [Optional chaining](/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-- [Making decisions in your code — conditionals](/en-US/docs/Learn/JavaScript/Building_blocks/conditionals)
-- [Expressions and operators](/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators)
+- [`if...else`](/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+- [Nullish coalescing operator (`??`)](/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
+- [Optional chaining (`?.`)](/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+- [Learn: Making decisions in your code — conditionals](/en-US/docs/Learn_web_development/Core/Scripting/Conditionals)
+- [Expressions and operators](/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators) guide

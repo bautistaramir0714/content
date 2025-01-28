@@ -11,20 +11,21 @@ The **`return()`** method of {{jsxref("Generator")}} instances acts as if a `ret
 
 ## Syntax
 
-<!-- We don't usually add the "generatorObject" subject for methods. However, it is necessary here, because "return" is a keyword, so otherwise it's invalid syntax. -->
+<!-- We don't usually add the "generatorInstance" subject for methods. However, it is necessary here, because "return" is a keyword, so otherwise it's invalid syntax. -->
 
 ```js-nolint
-generatorObject.return(value)
+generatorInstance.return()
+generatorInstance.return(value)
 ```
 
 ### Parameters
 
-- `value`
+- `value` {{optional_inline}}
   - : The value to return.
 
 ### Return value
 
-An {{jsxref("Global_Objects/Object", "Object")}} with two properties:
+An {{jsxref("Object")}} with two properties:
 
 - `done`
   - : A boolean value:
@@ -41,7 +42,7 @@ The `return()` method, when called, can be seen as if a `return value;` statemen
 
 ### Using return()
 
-The following example shows a simple generator and the `return` method.
+The following example shows a generator and the `return` method.
 
 ```js
 function* gen() {

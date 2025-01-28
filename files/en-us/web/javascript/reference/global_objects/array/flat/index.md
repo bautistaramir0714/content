@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.flat
 
 {{JSRef}}
 
-The **`flat()`** method creates a new array with all sub-array
+The **`flat()`** method of {{jsxref("Array")}} instances creates a new array with all sub-array
 elements concatenated into it recursively up to the specified depth.
 
 {{EmbedInteractiveExample("pages/js/array-flat.html")}}
@@ -33,7 +33,7 @@ A new array with the sub-array elements concatenated into it.
 
 The `flat()` method is a [copying method](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#copying_methods_and_mutating_methods). It does not alter `this` but instead returns a [shallow copy](/en-US/docs/Glossary/Shallow_copy) that contains the same elements as the ones from the original array.
 
-The `flat()` method ignores empty slots if the array being flattened is [sparse](/en-US/docs/Web/JavaScript/Guide/Indexed_collections#sparse_arrays). For example, if `depth` is 1, both empty slots in the root array and in the first level of nested arrays are ignored, but empty slots in further nested arrays are preserved with the arrays themselves.
+The `flat()` method removes empty slots if the array being flattened is [sparse](/en-US/docs/Web/JavaScript/Guide/Indexed_collections#sparse_arrays). For example, if `depth` is 1, both empty slots in the root array and in the first level of nested arrays are ignored, but empty slots in further nested arrays are preserved with the arrays themselves.
 
 The `flat()` method is [generic](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#generic_array_methods). It only expects the `this` value to have a `length` property and integer-keyed properties. However, its elements must be arrays if they are to be flattened.
 
@@ -61,7 +61,7 @@ arr4.flat(Infinity);
 
 ### Using flat() on sparse arrays
 
-The `flat()` method removes empty slots in arrays:
+The `flat()` method removes [empty slots](/en-US/docs/Web/JavaScript/Guide/Indexed_collections#sparse_arrays) in arrays:
 
 ```js
 const arr5 = [1, 2, , 4, 5];
@@ -70,9 +70,9 @@ console.log(arr5.flat()); // [1, 2, 4, 5]
 const array = [1, , 3, ["a", , "c"]];
 console.log(array.flat()); // [ 1, 3, "a", "c" ]
 
-const array2 = [1, , 3, ["a", , ["d", , "e"]]];
-console.log(array2.flat()); // [ 1, 3, "a", ["d", empty, "e"] ]
-console.log(array2.flat(2)); // [ 1, 3, "a", "d", "e"]
+const array2 = [1, , 3, undefined, ["a", , ["d", , "e"]], null];
+console.log(array2.flat()); // [ 1, 3, undefined, "a", ["d", empty, "e"], null ]
+console.log(array2.flat(2)); // [ 1, 3, undefined, "a", "d", "e", null ]
 ```
 
 ### Calling flat() on non-array objects
@@ -103,7 +103,7 @@ console.log(Array.prototype.flat.call(arrayLike));
 ## See also
 
 - [Polyfill of `Array.prototype.flat` in `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Indexed collections](/en-US/docs/Web/JavaScript/Guide/Indexed_collections)
+- [Indexed collections](/en-US/docs/Web/JavaScript/Guide/Indexed_collections) guide
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.concat()")}}
 - {{jsxref("Array.prototype.flatMap()")}}

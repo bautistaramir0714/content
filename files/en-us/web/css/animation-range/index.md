@@ -38,7 +38,7 @@ animation-range: 25% normal;
 animation-range: 25% 50%;
 animation-range: entry exit; /* Equivalent to entry 0% exit 100% */
 animation-range: cover cover 200px; /* Equivalent to cover 0% cover 200px */
-nimation-range: entry 10% exit; /* Equivalent to entry 10% exit 100% */
+animation-range: entry 10% exit; /* Equivalent to entry 10% exit 100% */
 animation-range: 10% exit 90%;
 animation-range: entry 10% 90%;
 ```
@@ -80,12 +80,14 @@ One or two values representing the [`animation-range-start`](/en-US/docs/Web/CSS
 
     In the case of `<timeline-range-name>` values that do not include a `<length-percentage>`, the percentage defaults to `0%` if it is an `animation-range-start` value, and `100%` if it is an `animation-range-end` value.
 
-    > **Note:** It is quite hard to visualize what these values mean from the descriptions above. Fortunately, the [View Timeline Ranges Visualizer](https://scroll-driven-animations.style/tools/view-timeline/ranges/) shows exactly what they mean in an easy visual format.
+    > [!NOTE]
+    > It is quite hard to visualize what these values mean from the descriptions above. Fortunately, the [View Timeline Ranges Visualizer](https://scroll-driven-animations.style/tools/view-timeline/ranges/) shows exactly what they mean in an easy visual format.
 
 - `<timeline-range-name> <length-percentage>`
   - : A combination value that equals the specified percentage or distance through the specified named timeline range, measured from the start of that timeline range.
 
-> **Note:** The scroll port (see {{glossary("Scroll container")}} for more details) area known as the view progress visibility range is the area inside which the subject element of a _named view progress timeline_ animation is deemed to be visible. By default, this is the full range of the scrollport, but it can be adjusted using the {{cssxref("view-timeline-inset")}} property.
+> [!NOTE]
+> The scroll port (see {{glossary("Scroll container")}} for more details) area known as the view progress visibility range is the area inside which the subject element of a _named view progress timeline_ animation is deemed to be visible. By default, this is the full range of the scrollport, but it can be adjusted using the {{cssxref("view-timeline-inset")}} property.
 
 ## Formal definition
 

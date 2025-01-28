@@ -11,6 +11,8 @@ browser-compat: css.properties.-webkit-mask-repeat-x
 
 The `-webkit-mask-repeat-x` property specifies whether and how a mask image is repeated (tiled) horizontally.
 
+## Syntax
+
 ```css
 /* Keyword values */
 -webkit-mask-repeat-x: repeat;
@@ -28,8 +30,6 @@ The `-webkit-mask-repeat-x` property specifies whether and how a mask image is r
 -webkit-mask-repeat-x: revert-layer;
 -webkit-mask-repeat-x: unset;
 ```
-
-## Syntax
 
 ### Values
 
@@ -60,12 +60,12 @@ The `-webkit-mask-repeat-x` property specifies whether and how a mask image is r
 ### Using a repeating or non-repeating mask image
 
 ```css
-.exampleone {
+.example-one {
   -webkit-mask-image: url("mask.png");
   -webkit-mask-repeat-x: repeat;
 }
 
-.exampletwo {
+.example-two {
   -webkit-mask-image: url("mask.png");
   -webkit-mask-repeat-x: no-repeat;
 }
@@ -76,7 +76,7 @@ The `-webkit-mask-repeat-x` property specifies whether and how a mask image is r
 You can specify a different `<repeat-style>` for each mask image, separated by commas:
 
 ```css
-.examplethree {
+.example-three {
   -webkit-mask-image: url("mask1.png"), url("mask2.png");
   -webkit-mask-repeat-x: repeat, space;
 }

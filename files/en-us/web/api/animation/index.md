@@ -26,6 +26,8 @@ The **`Animation`** interface of the [Web Animations API](/en-US/docs/Web/API/We
   - : Returns the current finished Promise for this animation.
 - {{domxref("Animation.id")}}
   - : Gets and sets the `String` used to identify the animation.
+- {{domxref("Animation.overallProgress")}} {{ReadOnlyInline}} {{experimental_inline}}
+  - : Returns a number between `0` and `1` indicating the animation's overall progress towards its finished state.
 - {{domxref("Animation.pending")}} {{ReadOnlyInline}}
   - : Indicates whether the animation is currently waiting for an asynchronous operation such as initiating playback or pausing a running animation.
 - {{domxref("Animation.playState")}} {{ReadOnlyInline}}
@@ -67,13 +69,13 @@ The **`Animation`** interface of the [Web Animations API](/en-US/docs/Web/API/We
 - {{domxref("Animation.finish_event", "finish")}}
   - : Fires when the animation finishes playing.
 - {{domxref("animation.remove_event", "remove")}}
-  - : Fires when the animation is [automatically removed](#automatically_removing_filling_animations) by the browser.
+  - : Fires when the animation is [automatically removed](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#automatically_removing_filling_animations) by the browser.
 
 ## Accessibility concerns
 
 Blinking and flashing animation can be problematic for people with cognitive concerns such as Attention Deficit Hyperactivity Disorder (ADHD). Additionally, certain kinds of motion can be a trigger for Vestibular disorders, epilepsy, and migraine, and Scotopic sensitivity.
 
-Consider providing a mechanism for pausing or disabling animation, as well as using the [Reduced Motion Media Query](/en-US/docs/Web/CSS/@media/prefers-reduced-motion) to create a complimentary experience for users who have expressed a preference for no animated experiences.
+Consider providing a mechanism for pausing or disabling animation, as well as using the [Reduced Motion Media Query](/en-US/docs/Web/CSS/@media/prefers-reduced-motion) (or equivalent [user agent client hint](/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints) {{HTTPHeader("Sec-CH-Prefers-Reduced-Motion")}}) to create a complimentary experience for users who have expressed a preference for no animated experiences.
 
 - [Designing Safer Web Animation For Motion Sensitivity · An A List Apart Article](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/)
 - [An Introduction to the Reduced Motion Media Query | CSS-Tricks](https://css-tricks.com/introduction-reduced-motion-media-query/)

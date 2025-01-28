@@ -6,7 +6,7 @@ page-type: web-api-instance-method
 browser-compat: api.ReadableStreamBYOBRequest.respondWithNewView
 ---
 
-{{APIRef("Streams")}}
+{{APIRef("Streams")}}{{AvailableInWorkers}}
 
 The **`respondWithNewView()`** method of the {{domxref("ReadableStreamBYOBRequest")}} interface specifies a new view that the consumer of the associated readable byte stream should write to instead of {{domxref("ReadableStreamBYOBRequest.view")}}.
 
@@ -56,7 +56,7 @@ For example, we might define the view and respond as shown below:
 const v = controller.byobRequest.view;
 bytesRead = socket.readInto(v.buffer, v.byteOffset, v.byteLength);
 byobRequest.respondWithNewView(
-  byobRequest.view.subarray(v.byteOffset, bytesRead)
+  byobRequest.view.subarray(v.byteOffset, bytesRead),
 );
 ```
 

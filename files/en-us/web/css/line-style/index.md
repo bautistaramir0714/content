@@ -8,7 +8,7 @@ spec-urls: https://drafts.csswg.org/css-backgrounds/#typedef-line-style
 
 {{CSSRef}}
 
-The **`<line-style>`** {{glossary("enumerated")}} value type represents keyword values that define the style of a line, or the lack of a line. The `<line-style>` keyword values are used in the following longhand and shorthand [border](/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders) and [column](/en-US/docs/Web/CSS/CSS_Columns) properties:
+The **`<line-style>`** {{glossary("enumerated")}} value type represents keyword values that define the style of a line, or the lack of a line. The `<line-style>` keyword values are used in the following longhand and shorthand [border](/en-US/docs/Web/CSS/CSS_backgrounds_and_borders) and [column](/en-US/docs/Web/CSS/CSS_multicol_layout) properties:
 
 - {{cssxref("border")}}, {{cssxref("border-style")}}
 - {{cssxref("border-block")}}, {{cssxref("border-block-style")}}
@@ -54,7 +54,8 @@ The `<line-style>` enumerated type is specified using one of the values listed b
 - `outset`
   - : Displays a border that makes the element appear embossed. This value is the opposite of `inset`. When applied to a table cell with {{cssxref("border-collapse")}} set to `collapsed`, this value behaves like `ridge`.
 
-> **Note:** When `<outline-style>` is used as the value type for {{cssxref("outline")}} and {{cssxref("outline-style")}} properties, it is similar to `<line-style>`, but does not support `hidden` and includes the `auto` value. When `auto` is set, the user-agent defined `<line-style>` value is used.
+> [!NOTE]
+> When `<outline-style>` is used as the value type for {{cssxref("outline")}} and {{cssxref("outline-style")}} properties, it is similar to `<line-style>`, but does not support `hidden` and includes the `auto` value. When `auto` is set, the user-agent defined `<line-style>` value is used.
 
 ## Examples
 
@@ -205,7 +206,7 @@ Notice that the black border is not always black.
 
 ### Defining line styles and colors
 
-This example demonstrates line-style and color choice. With some `<line-style>` keyword values, the color of the line may not be what you expect. To create the required "3D" effect of `groove,` `ridge`, `inset`, and `outset` styles when displaying these values in black or white, user agents use different color calculations than any other color-line combinations.
+This example demonstrates line-style and color choice. With some `<line-style>` keyword values, the color of the line may not be what you expect. To create the required "3D" effect of `groove`, `ridge`, `inset`, and `outset` styles when displaying these values in black or white, user agents use different color calculations than any other color-line combinations.
 
 #### HTML
 
@@ -286,6 +287,6 @@ Notice that the almost-black color of `#000001` may be different from the actual
 
 ## See also
 
-- [CSS backgrounds and borders](/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders) module
-- [CSS basic user interface](/en-US/docs/Web/CSS/CSS_Basic_User_Interface) module
-- [CSS multi-column layout](/en-US/docs/Web/CSS/CSS_Columns) module
+- [CSS backgrounds and borders](/en-US/docs/Web/CSS/CSS_backgrounds_and_borders) module
+- [CSS basic user interface](/en-US/docs/Web/CSS/CSS_basic_user_interface) module
+- [CSS multi-column layout](/en-US/docs/Web/CSS/CSS_multicol_layout) module

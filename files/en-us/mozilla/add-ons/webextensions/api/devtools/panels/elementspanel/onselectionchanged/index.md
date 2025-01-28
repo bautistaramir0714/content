@@ -5,7 +5,7 @@ page-type: webextension-api-event
 browser-compat: webextensions.api.devtools.panels.ElementsPanel.onSelectionChanged
 ---
 
-{{AddonSidebar()}}
+{{AddonSidebar}}
 
 Fires when the user selects a different page element for inspection with the browser's developer tools, for example by selecting the "Inspect Element" context menu item in Firefox.
 
@@ -43,15 +43,17 @@ Listen for selection changed events, and log the text content of the newly selec
 
 ```js
 function handleSelectedElement() {
-  browser.devtools.inspectedWindow.eval("$0.textContent")
-    .then((result) => {
-      console.log(result[0]);
-    });
+  browser.devtools.inspectedWindow.eval("$0.textContent").then((result) => {
+    console.log(result[0]);
+  });
 }
 
-browser.devtools.panels.elements.onSelectionChanged.addListener(handleSelectedElement);
+browser.devtools.panels.elements.onSelectionChanged.addListener(
+  handleSelectedElement,
+);
 ```
 
 {{WebExtExamples}}
 
-> **Note:** This API is based on Chromium's [`chrome.devtools`](https://developer.chrome.com/docs/extensions/mv3/devtools/) API.
+> [!NOTE]
+> This API is based on Chromium's [`chrome.devtools`](https://developer.chrome.com/docs/extensions/how-to/devtools/extend-devtools) API.

@@ -1,13 +1,14 @@
 ---
 title: Making PWAs work offline with Service workers
 slug: Web/Progressive_web_apps/Tutorials/js13kGames/Offline_Service_workers
+page-type: guide
 ---
 
 {{PreviousMenuNext("Web/Progressive_web_apps/Tutorials/js13kGames/App_structure", "Web/Progressive_web_apps/Tutorials/js13kGames/Installable_PWAs", "Web/Progressive_web_apps/Tutorials/js13kGames")}}
 
 {{PWASidebar}}
 
-Now that we've seen what the structure of js13kPWA looks like and have seen the basic shell up and running, let's look at how the offline capabilities using Service Worker are implemented. In this article, we look at how it is used in our [js13kPWA example](https://mdn.github.io/pwa-examples/js13kpwa/) ([see the source code also](https://github.com/mdn/pwa-examples/tree/master/js13kpwa)). We examine how to add offline functionality.
+Now that we've seen what the structure of js13kPWA looks like and have seen the basic shell up and running, let's look at how the offline capabilities using Service Worker are implemented. In this article, we look at how it is used in our [js13kPWA example](https://mdn.github.io/pwa-examples/js13kpwa/) ([see the source code also](https://github.com/mdn/pwa-examples/tree/main/js13kpwa)). We examine how to add offline functionality.
 
 ## Service workers explained
 
@@ -17,7 +18,7 @@ They run on a separate thread from the main JavaScript code of our page, and don
 
 Service workers can do more than offering offline capabilities, including handling notifications or performing heavy calculations. Service workers are quite powerful as they can take control over network requests, modify them, serve custom responses retrieved from the cache, or synthesize responses completely.
 
-To learn more about service workers, see [Offline and background operation](Web/Progressive_web_apps/Guides/Offline_and_background_operation).
+To learn more about service workers, see [Offline and background operation](/en-US/docs/Web/Progressive_web_apps/Guides/Offline_and_background_operation).
 
 ## Service workers in the js13kPWA app
 
@@ -97,7 +98,7 @@ self.addEventListener("install", (e) => {
       const cache = await caches.open(cacheName);
       console.log("[Service Worker] Caching all: app shell and content");
       await cache.addAll(contentToCache);
-    })()
+    })(),
   );
 });
 ```
@@ -110,7 +111,7 @@ The service worker does not install until the code inside `waitUntil` is execute
 
 Here, we open a cache with a given name, then add all the files our app uses to the cache, so they are available next time it loads. Resources are identified by their request URL, which is relative to the worker's {{domxref("WorkerGlobalScope.location", "location", "", 1)}}.
 
-You may notice we haven't cached `game.js`. This is the file that contains the data we use when displaying our games. In reality this data would most likely come from an API endpoint or database and caching the data would mean updating it periodically when there was network connectivity. We won't go into that here, but the {{domxref('Web Periodic Background Synchronization API','Periodic Background Sync API')}} is good further reading on this topic.
+You may notice we haven't cached `game.js`. This is the file that contains the data we use when displaying our games. In reality this data would most likely come from an API endpoint or database and caching the data would mean updating it periodically when there was network connectivity. We won't go into that here, but the [Periodic Background Sync API](/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API) is good further reading on this topic.
 
 #### Activation
 
@@ -118,7 +119,7 @@ There is also an `activate` event, which is used in the same way as `install`. T
 
 ### Responding to fetches
 
-We also have a `fetch` event at our disposal, which fires every time an HTTP request is fired off from our app. This is very useful, as it allows us to intercept requests and respond to them with custom responses. Here is a simple usage example:
+We also have a `fetch` event at our disposal, which fires every time an HTTP request is fired off from our app. This is very useful, as it allows us to intercept requests and respond to them with custom responses. For example:
 
 ```js
 self.addEventListener("fetch", (e) => {
@@ -144,7 +145,7 @@ self.addEventListener("fetch", (e) => {
       console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
       cache.put(e.request, response.clone());
       return response;
-    })()
+    })(),
   );
 });
 ```
@@ -175,7 +176,7 @@ self.addEventListener("install", (e) => {
     (async () => {
       const cache = await caches.open(cacheName);
       await cache.addAll(contentToCache);
-    })()
+    })(),
   );
 });
 ```
@@ -196,9 +197,9 @@ self.addEventListener("activate", (e) => {
             return;
           }
           return caches.delete(key);
-        })
+        }),
       );
-    })
+    }),
   );
 });
 ```

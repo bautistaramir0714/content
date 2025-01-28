@@ -33,7 +33,7 @@ This descriptor is specified as either the keyword `normal` or as a comma-separa
 
   - : Represents a space-separated tuple consisting of a tag name and an optional value.
 
-    The tag name is always a {{cssxref("&lt;string&gt;")}} of four ASCII characters. If the tag name has more or fewer characters or if it contains characters outside the `U+20` – `U+7E` code point range, the descriptor is invalid.
+    The tag name is always a {{cssxref("&lt;string&gt;")}} of four {{Glossary("ASCII")}} characters. If the tag name has more or fewer characters or if it contains characters outside the `U+20` – `U+7E` code point range, the descriptor is invalid.
 
     The optional value can be a positive integer or the keyword `on` or `off`. The keywords `on` and `off` are synonyms for the values `1` and `0`, respectively. If no value is set, the default is `1`. For non-boolean OpenType features (e.g., [stylistic alternates](https://learn.microsoft.com/en-ca/typography/opentype/spec/features_pt#tag-salt)), the value implies a particular glyph to be selected; for boolean features, the value turns the feature on or off.
 
@@ -54,8 +54,8 @@ In this example, the tag name `swsh` and a boolean value `1` are used as the val
 #### HTML
 
 ```html
-<p class="swashoff">Swash is off here</p>
-<p class="swashon">Swash is on here</p>
+<p class="swash-off">Swash is off here</p>
+<p class="swash-on">Swash is on here</p>
 ```
 
 #### CSS
@@ -74,10 +74,10 @@ p {
   font-size: 3rem;
   margin: 0.7rem 3rem;
 }
-.swashoff {
+.swash-off {
   font-family: MonteCarlo;
 }
-.swashon {
+.swash-on {
   font-family: MonteCarlo2;
 }
 ```

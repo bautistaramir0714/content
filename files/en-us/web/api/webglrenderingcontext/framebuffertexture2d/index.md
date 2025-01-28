@@ -6,7 +6,7 @@ page-type: web-api-instance-method
 browser-compat: api.WebGLRenderingContext.framebufferTexture2D
 ---
 
-{{APIRef("WebGL")}}
+{{APIRef("WebGL")}}{{AvailableInWorkers}}
 
 The **`WebGLRenderingContext.framebufferTexture2D()`** method
 of the [WebGL API](/en-US/docs/Web/API/WebGL_API) attaches a texture to a
@@ -119,7 +119,7 @@ gl.framebufferTexture2D(
   gl.COLOR_ATTACHMENT0,
   gl.TEXTURE_2D,
   texture,
-  0
+  0,
 );
 ```
 

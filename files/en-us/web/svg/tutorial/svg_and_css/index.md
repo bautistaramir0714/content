@@ -10,9 +10,10 @@ page-type: guide
 
 This page illustrates the application of CSS to the specialized language for creating graphics: [SVG](/en-US/docs/Web/SVG).
 
-Below you'll create a simple demonstration that runs in your SVG-enabled browser.
+Below you'll create a demonstration that runs in a browser.
 
-> **Note:** Elements referenced by {{SVGElement("use")}} elements inherit the styles from that element. So to apply different styles to them you should use [CSS custom properties](/en-US/docs/Web/CSS/CSS_Variables).
+> [!NOTE]
+> Elements referenced by {{SVGElement("use")}} elements inherit the styles from that element. So to apply different styles to them you should use [CSS custom properties](/en-US/docs/Web/CSS/CSS_cascading_variables).
 
 ## Example
 
@@ -425,7 +426,8 @@ See below how the structure then looks like.
   width="600px"
   height="600px"
   viewBox="-300 -300 600 600"
-  xmlns="http://www.w3.org/2000/svg">
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>SVG demonstration</title>
   <desc>Mozilla CSS Getting Started - SVG demonstration</desc>
 
@@ -435,17 +437,17 @@ See below how the structure then looks like.
       <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10" />
     </g>
     <g id="quadrant">
-      <use xlink:href="#segment" />
-      <use xlink:href="#segment" transform="rotate(18)" />
-      <use xlink:href="#segment" transform="rotate(36)" />
-      <use xlink:href="#segment" transform="rotate(54)" />
-      <use xlink:href="#segment" transform="rotate(72)" />
+      <use href="#segment" />
+      <use href="#segment" transform="rotate(18)" />
+      <use href="#segment" transform="rotate(36)" />
+      <use href="#segment" transform="rotate(54)" />
+      <use href="#segment" transform="rotate(72)" />
     </g>
     <g id="petals">
-      <use xlink:href="#quadrant" />
-      <use xlink:href="#quadrant" transform="rotate(90)" />
-      <use xlink:href="#quadrant" transform="rotate(180)" />
-      <use xlink:href="#quadrant" transform="rotate(270)" />
+      <use href="#quadrant" />
+      <use href="#quadrant" transform="rotate(90)" />
+      <use href="#quadrant" transform="rotate(180)" />
+      <use href="#quadrant" transform="rotate(270)" />
     </g>
     <radialGradient
       id="fade"
@@ -471,11 +473,8 @@ See below how the structure then looks like.
       r="200"
       stroke="none"
       fill="url(#fade)" />
-    <use id="outer-petals" xlink:href="#petals" />
-    <use
-      id="inner-petals"
-      xlink:href="#petals"
-      transform="rotate(9) scale(0.33)" />
+    <use id="outer-petals" href="#petals" />
+    <use id="inner-petals" href="#petals" transform="rotate(9) scale(0.33)" />
   </g>
 </svg>
 ```

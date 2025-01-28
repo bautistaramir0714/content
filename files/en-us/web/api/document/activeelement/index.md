@@ -23,7 +23,8 @@ toggle a radio button). Which elements are focusable varies depending on the pla
 and the browser's current configuration. For example, on macOS systems, elements that
 aren't text input elements are not typically focusable by default.
 
-> **Note:** Focus (which element is receiving user input events) is not
+> [!NOTE]
+> Focus (which element is receiving user input events) is not
 > the same thing as selection (the currently highlighted part of the document). You can
 > get the current selection using {{domxref("window.getSelection()")}}.
 
@@ -59,13 +60,13 @@ function onMouseUp(e) {
   const activeTextarea = document.activeElement;
   const selection = activeTextarea.value.substring(
     activeTextarea.selectionStart,
-    activeTextarea.selectionEnd
+    activeTextarea.selectionEnd,
   );
 
   const outputElement = document.getElementById("output-element");
   const outputText = document.getElementById("output-text");
-  outputElement.innerHTML = activeTextarea.id;
-  outputText.innerHTML = selection;
+  outputElement.textContent = activeTextarea.id;
+  outputText.textContent = selection;
 }
 
 const textarea1 = document.getElementById("ta-example-one");

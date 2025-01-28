@@ -8,12 +8,11 @@ browser-compat: api.DataTransfer.types
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransfer.types`** read-only property returns the available types
-that exist in the {{domxref("DataTransfer.items","items")}}.
+The **`DataTransfer.types`** read-only property returns the available types that exist in the {{domxref("DataTransfer.items","items")}}.
 
 ## Value
 
-An array of the data formats used in the drag operation. Each format is a string
+An array of the data formats. Each format is a string
 which is generally a MIME type such as `text/plain` or `text/html`. If the drag
 operation included no data, this list will be empty. If any files are included in
 the drag operation, then one of the types will be the string `Files`.
@@ -24,7 +23,7 @@ This example shows the use of the `types` and
 {{domxref("DataTransfer.items","items")}} properties.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <title>Examples of DataTransfer.{types,items} properties</title>
   <meta content="width=device-width" />
@@ -63,7 +62,7 @@ This example shows the use of the `types` and
       // Print each item's "kind" and "type"
       for (let i = 0; i < ev.dataTransfer.items.length; i++) {
         console.log(
-          `… items[${i}].kind = ${ev.dataTransfer.items[i].kind}; type = ${ev.dataTransfer.items[i].type}`
+          `… items[${i}].kind = ${ev.dataTransfer.items[i].kind}; type = ${ev.dataTransfer.items[i].type}`,
         );
       }
     }

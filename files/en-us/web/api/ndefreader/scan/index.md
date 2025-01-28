@@ -32,7 +32,7 @@ scan(options)
 A {{JSxRef("Promise")}} that resolves immediately after
 scheduling read operations for the NFC adapter.
 
-## Exceptions
+### Exceptions
 
 This method doesn't throw exceptions; instead, it rejects the returned promise,
 passing a {{domxref("DOMException")}} whose `name` is one of the
@@ -61,7 +61,7 @@ ndef
     console.log("Scan started successfully.");
     ndef.onreadingerror = (event) => {
       console.log(
-        "Error! Cannot read data from the NFC tag. Try a different one?"
+        "Error! Cannot read data from the NFC tag. Try a different one?",
       );
     };
     ndef.onreading = (event) => {

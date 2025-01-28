@@ -1,6 +1,7 @@
 ---
 title: Caching
 slug: Web/Progressive_web_apps/Guides/Caching
+page-type: guide
 ---
 
 {{PWASidebar}}
@@ -22,7 +23,7 @@ The main technologies on which a PWA can build a caching strategy are the [Fetch
 
 ### Fetch API
 
-The Fetch API defines a global function {{domxref("fetch()")}} for fetching a network resource, and {{domxref("Request")}} and {{domxref("Response")}} interfaces that represent network requests and responses. The `fetch()` function takes a `Request` or a URL as an argument, and returns a {{jsxref("Promise")}} that resolves to a `Response`.
+The Fetch API defines a global function {{domxref("WorkerGlobalScope/fetch", "fetch()")}} for fetching a network resource, and {{domxref("Request")}} and {{domxref("Response")}} interfaces that represent network requests and responses. The `fetch()` function takes a `Request` or a URL as an argument, and returns a {{jsxref("Promise")}} that resolves to a `Response`.
 
 The `fetch()` function is available to service workers as well as to the main app thread.
 
@@ -46,7 +47,8 @@ A PWA can cache resources at any time, but in practice there are a few times whe
 
 - **In the service worker's `install` event handler (precaching)**: When a service worker is installed, the browser fires an event called {{domxref("ServiceWorkerGlobalScope.install_event", "install")}} in the service worker's global scope. At this point the service worker can _precache_ resources, fetching them from the network and storing them in the cache.
 
-  > **Note:** Service worker install time is not the same as PWA install time. A service worker's `install` event fires as soon as the service worker has been downloaded and executes, which will typically happen as soon as the user visits your site.
+  > [!NOTE]
+  > Service worker install time is not the same as PWA install time. A service worker's `install` event fires as soon as the service worker has been downloaded and executes, which will typically happen as soon as the user visits your site.
   >
   > Even if the user never installs your site as a PWA, its service worker will be installed and activated.
 
@@ -73,7 +75,7 @@ In this strategy we will precache some resources, and then implement a "cache fi
   - Otherwise, go to the network. If the network request succeeds, cache the resource for next time.
 - For all other resources, we will always go to the network.
 
-Precaching is an appropriate stategy for resources that the PWA is certain to need, that will not change for this version of the app, and that need to be fetched as quickly as possible. That includes, for example, the basic user interface of the app. If this is precached, then the app's UI can be rendered on launch without needing any network requests.
+Precaching is an appropriate strategy for resources that the PWA is certain to need, that will not change for this version of the app, and that need to be fetched as quickly as possible. That includes, for example, the basic user interface of the app. If this is precached, then the app's UI can be rendered on launch without needing any network requests.
 
 First, the service worker precaches static resources in its `install` event handler:
 
@@ -137,7 +139,7 @@ This is a good choice when responsiveness is important, and freshness is somewha
 In this version we implement "cache first with cache refresh" for all resources except JSON.
 
 ```js
-function isCachable(request) {
+function isCacheable(request) {
   const url = new URL(request.url);
   return !url.pathname.endsWith(".json");
 }
@@ -155,7 +157,7 @@ async function cacheFirstWithRefresh(request) {
 }
 
 self.addEventListener("fetch", (event) => {
-  if (isCachable(event.request)) {
+  if (isCacheable(event.request)) {
     event.respondWith(cacheFirstWithRefresh(event.request));
   }
 });
@@ -208,4 +210,4 @@ A PWA should clean up any old versions of its cache in the service worker's {{do
 - [Fetch API](/en-US/docs/Web/API/Fetch_API)
 - [Storage quotas and eviction criteria](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria)
 - [Strategies for service worker caching](https://developer.chrome.com/docs/workbox/caching-strategies-overview) on developer.chrome.com (2021)
-- [The Offline Cookbook](https://web.dev/offline-cookbook/) on web.dev (2020)
+- [The Offline Cookbook](https://web.dev/articles/offline-cookbook) on web.dev (2020)

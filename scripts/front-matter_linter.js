@@ -24,11 +24,14 @@ async function resolveDirectory(file) {
       .withErrors()
       .withFullPaths()
       .filter((filePath) => filePath.endsWith("index.md"))
+      .exclude((dirName) => dirName === "conflicting" || dirName === "orphaned")
       .crawl(file);
     return api.withPromise();
   } else if (
     stats.isFile() &&
     file.endsWith("index.md") &&
+    !file.includes("/conflicting/") &&
+    !file.includes("/orphaned/") &&
     !file.includes("tests/front-matter_test_files")
   ) {
     return [file];
@@ -43,9 +46,7 @@ async function lintFrontMatter(filesAndDirectories, options) {
     await Promise.all(filesAndDirectories.map(resolveDirectory))
   ).flat();
 
-  options.config = JSON.parse(
-    await fs.readFile("./front-matter-config.json", "utf-8")
-  );
+  options.config = JSON.parse(await fs.readFile(options.configFile, "utf-8"));
 
   options.validator = getAjvValidator(options.config.schema);
 
@@ -58,7 +59,7 @@ async function lintFrontMatter(filesAndDirectories, options) {
     try {
       const [error, fixableError, content] = await checkFrontMatter(
         file,
-        options
+        options,
       );
       if (content) {
         fs.writeFile(file, content);
@@ -91,7 +92,7 @@ function tryOrExit(f) {
       await f({ options, ...args });
     } catch (error) {
       if (options.verbose || options.v) {
-        console.error(chalk.red(error.stack));
+        console.error(error.stack);
       }
       throw error;
     }
@@ -102,6 +103,10 @@ program
   .option("--fix", "Save corrected output", {
     validator: program.BOOLEAN,
     default: false,
+  })
+  .option("--config-file", "Custom configuration file", {
+    validator: program.STRING,
+    default: "./front-matter-config.json",
   })
   .argument("[files...]", "list of files and/or directories to check", {
     default: ["./files/en-us"],
@@ -115,7 +120,7 @@ program
         return;
       }
       return lintFrontMatter(files, options);
-    })
+    }),
   );
 
 program.run();

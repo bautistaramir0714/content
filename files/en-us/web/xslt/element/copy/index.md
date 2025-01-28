@@ -1,13 +1,14 @@
 ---
 title: <xsl:copy>
 slug: Web/XSLT/Element/copy
+page-type: xslt-element
 ---
 
 {{XsltSidebar}}
 
 The `<xsl:copy>` element transfers a shallow copy (the node and any associated namespace node) of the current node to the output document. It does not copy any children or attributes of the current node.
 
-### Syntax
+## Syntax
 
 ```xml
 <xsl:copy use-attribute-sets=LIST-OF-NAMES>
@@ -28,10 +29,10 @@ None.
 
 Instruction, appears within a template.
 
-### Defined
+## Specifications
 
 XSLT, section 7.5.
 
-### Gecko support
+## Gecko support
 
 Supported.

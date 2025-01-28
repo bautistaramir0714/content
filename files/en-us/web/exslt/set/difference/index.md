@@ -1,6 +1,7 @@
 ---
 title: set:difference()
 slug: Web/EXSLT/set/difference
+page-type: exslt-function
 ---
 
 {{XSLTRef}}{{QuickLinksWithSubpages("/en-US/docs/Web/EXSLT")}}
@@ -22,7 +23,7 @@ set:difference(nodeSet1, nodeSet2)
 - `nodeSet2`
   - : The set of nodes to subtract from `nodeSet1`.
 
-### Returns
+### Return value
 
 A node-set containing the nodes that are in `nodeSet1` but not in `nodeSet2`.
 

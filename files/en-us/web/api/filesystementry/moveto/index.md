@@ -57,7 +57,7 @@ moveTo(newParent, newName, successCallback, errorCallback)
 
 None ({{jsxref("undefined")}}).
 
-### Errors
+### Exceptions
 
 - `FileError.INVALID_MODIFICATION_ERR`
   - : The requested operation involves an impossible change, such as moving a directory
@@ -85,12 +85,12 @@ workingDirectory.getFile(
           (dirEntry) => {
             fileEntry.moveTo(dirEntry);
           },
-          handleError
+          handleError,
         );
       }
     });
   },
-  handleError
+  handleError,
 );
 ```
 

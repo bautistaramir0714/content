@@ -5,7 +5,7 @@ page-type: css-combinator
 browser-compat: css.selectors.namespace
 ---
 
-{{CSSRef("Selectors")}}
+{{CSSRef}}
 
 The **namespace separator** (`|`) separates the selector from the namespace, identifying the {{glossary("namespace")}}, or lack thereof, for a type selector.
 
@@ -101,7 +101,8 @@ The selector `|a`, a link not in a namespace, doesn't match any links. In HTML, 
 
 In this example, we use JavaScript to create an element without a namespace and append it to the document. We set the SVG namespace to be the default namespace by defining the unnamed namespace with `@namespace`.
 
-> **Note:** If a default, or unnamed, namespace is defined, universal and type selectors apply only to elements in that namespace.
+> [!NOTE]
+> If a default, or unnamed, namespace is defined, universal and type selectors apply only to elements in that namespace.
 
 #### HTML
 
@@ -135,7 +136,7 @@ document.body.appendChild(a);
 We declare a namespace with {{cssxref("@namespace")}}. By omitting the name for the namespace, the `@namespace` declaration creates a default namespace.
 
 ```css
-/* By ommitting a name, this sets SVG as the default namespace */
+/* By omitting a name, this sets SVG as the default namespace */
 @namespace url("http://www.w3.org/2000/svg");
 
 /* `<a>` in the default (set to SVG) namespace */

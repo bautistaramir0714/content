@@ -5,11 +5,14 @@ page-type: http-header
 status:
   - experimental
 browser-compat: http.headers.Sec-GPC
+spec-urls: https://privacycg.github.io/gpc-spec/
 ---
 
 {{HTTPSidebar}}{{SeeCompatTable}}
 
-The **`Sec-GPC`** (**G**lobal **P**rivacy **C**ontrol) request header indicates whether the user consents to a website or service selling or sharing their personal information with third parties.
+The HTTP **`Sec-GPC`** {{Glossary("request header")}} is part of the [Global Privacy Control](https://globalprivacycontrol.org/) (GPC) mechanism to indicate whether the user consents to a website or service selling or sharing their personal information with third parties.
+
+The specification does not define how the user can withdraw or grant consent for website.
 
 <table class="properties">
   <tbody>
@@ -19,29 +22,31 @@ The **`Sec-GPC`** (**G**lobal **P**rivacy **C**ontrol) request header indicates 
     </tr>
     <tr>
       <th scope="row">{{Glossary("Forbidden header name")}}</th>
-      <td>yes</td>
+      <td>Yes (<code>Sec-</code> prefix)</td>
     </tr>
   </tbody>
 </table>
 
 ## Syntax
 
-```
-Sec-GPC: 1
+```http
+Sec-GPC: <preference>
 ```
 
 ## Directives
 
-If `Sec-GPC` is enabled the header is sent with a value of `1` indicating the user prefers their information not be shared with or sold to third parties. Otherwise, the header is not sent to indicate the user has not made a decision or the user is okay with their information being shared with or sold to third parties.
+- `<preference>`
+  - : A value of `1` means the user has indicated that they prefer their information not be shared with, or sold to, third parties.
+    Otherwise, the header is not sent, which indicates that either the user has not made a decision or the user is okay with their information being shared with or sold to third parties.
 
 ## Examples
 
 ### Reading Global Privacy Control status from JavaScript
 
-The user's GPC preference can also be read from JavaScript using the {{domxref("Navigator.globalPrivacyControl")}} property:
+The user's GPC preference can also be read from JavaScript using the {{domxref("Navigator.globalPrivacyControl")}} or {{domxref("WorkerNavigator.globalPrivacyControl")}} property:
 
 ```js
-navigator.globalPrivacyControl; // "0" or "1"
+navigator.globalPrivacyControl; // "false" or "true"
 ```
 
 ## Specifications

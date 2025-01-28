@@ -1,6 +1,7 @@
 ---
 title: set:has-same-node()
 slug: Web/EXSLT/set/has-same-node
+page-type: exslt-function
 ---
 
 {{XSLTRef}}{{QuickLinksWithSubpages("/en-US/docs/Web/EXSLT")}}
@@ -20,7 +21,7 @@ set:has-same-node(nodeSet1, nodeSet2)
 - `nodeSet2`
   - : The second node set to check.
 
-### Returns
+### Return value
 
 `true` if the two node-sets have any nodes in common; otherwise `false`.
 

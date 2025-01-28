@@ -15,7 +15,8 @@ A `<noframes>` element can contain any HTML elements that are allowed within the
 
 `<noframes>` can be used to present a message explaining that the user's browser doesn't support frames, but ideally should be used to present an alternate form of the site that doesn't use frames but still offers the same or similar functionality.
 
-> **Note:** This element is obsolete and shouldn't be used, since the {{HTMLElement("frame")}} and {{HTMLElement("frameset")}} elements are also obsolete. When frames are needed at all, they should be presented using the {{HTMLElement("iframe")}} element.
+> [!NOTE]
+> This element is obsolete and shouldn't be used, since the {{HTMLElement("frame")}} and {{HTMLElement("frameset")}} elements are also obsolete. When frames are needed at all, they should be presented using the {{HTMLElement("iframe")}} element.
 
 ## Attributes
 
@@ -26,7 +27,7 @@ Like all other HTML elements, this element supports the [global attributes](/en-
 In this example, we see a frameset with two frames. In addition, `<noframes>` is used to present an explanatory message if the {{Glossary("user agent")}} doesn't support frames.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
     <!-- Document metadata goes here -->

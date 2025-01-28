@@ -5,7 +5,7 @@ page-type: webextension-api-function
 browser-compat: webextensions.api.notifications.clear
 ---
 
-{{AddonSidebar()}}
+{{AddonSidebar}}
 
 Clears a notification, given its ID.
 
@@ -44,10 +44,10 @@ function toggleAlarm(all) {
     browser.notifications.clear(myNotification);
   } else {
     browser.notifications.create(myNotification, {
-      "type": "basic",
-      "iconUrl": browser.runtime.getURL("icons/cake-48.png"),
-      "title": "Am imposing title",
-      "message": "Some interesting content"
+      type: "basic",
+      iconUrl: browser.runtime.getURL("icons/cake-48.png"),
+      title: "Am imposing title",
+      message: "Some interesting content",
     });
   }
 }
@@ -62,4 +62,5 @@ browser.browserAction.onClicked.addListener(handleClick);
 
 {{WebExtExamples}}
 
-> **Note:** This API is based on Chromium's [`chrome.notifications`](https://developer.chrome.com/docs/extensions/reference/notifications/) API.
+> [!NOTE]
+> This API is based on Chromium's [`chrome.notifications`](https://developer.chrome.com/docs/extensions/reference/api/notifications) API.

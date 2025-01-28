@@ -6,11 +6,11 @@ page-type: web-api-instance-property
 browser-compat: api.PerformanceEntry.entryType
 ---
 
-{{APIRef("Performance API")}} {{AvailableInWorkers}}
+{{APIRef("Performance API")}}{{AvailableInWorkers}}
 
 The read-only **`entryType`** property returns a string representing the type of performance metric that this entry represents.
 
-All supported `entryTypes` are available using the static property {{domxref("PerformanceObserver.supportedEntryTypes")}}.
+All supported `entryTypes` are available using the static property {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}}.
 
 ## Value
 
@@ -30,7 +30,7 @@ A string. The return value depends on the subtype of the `PerformanceEntry` obje
 
 - `first-input`
 
-  - : Reports the {{Glossary("first input delay")}} (FID).
+  - : Reports the {{Glossary("First Input Delay")}} (FID).
 
     The entry instance will be a {{domxref("PerformanceEventTiming")}} object.
 
@@ -45,6 +45,12 @@ A string. The return value depends on the subtype of the `PerformanceEntry` obje
   - : Reports layout stability of web pages based on movements of the elements on the page.
 
     The entry instance will be a {{domxref("LayoutShift")}} object.
+
+- `long-animation-frame`
+
+  - : Reports instances of [long animation frames (LoAFs)](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#what_is_a_long_animation_frame).
+
+    The entry instance will be a {{domxref("PerformanceLongAnimationFrameTiming")}} object.
 
 - `longtask`
 
@@ -105,7 +111,7 @@ const scriptResources = performance
   .getEntries()
   .filter(
     (entry) =>
-      entry.entryType === "resource" && entry.initiatorType === "script"
+      entry.entryType === "resource" && entry.initiatorType === "script",
   );
 console.log(scriptResources);
 ```
@@ -144,6 +150,6 @@ observer.observe({ entryTypes: ["resource", "navigation"] });
 
 ## See also
 
-- {{domxref("PerformanceObserver.supportedEntryTypes")}}
+- {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}}
 - {{domxref("Performance.getEntriesByType()")}}
 - {{domxref("PerformanceObserverEntryList.getEntriesByType()")}}

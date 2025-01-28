@@ -5,7 +5,7 @@ page-type: webextension-api-function
 browser-compat: webextensions.api.permissions.remove
 ---
 
-{{AddonSidebar()}}
+{{AddonSidebar}}
 
 Ask to give up the permissions listed in the given {{WebExtAPIRef("permissions.Permissions")}} object.
 
@@ -40,8 +40,8 @@ This code adds a click handler that removes a given permission.
 
 ```js
 const permissionToRemove = {
-  permissions: ["history"]
-}
+  permissions: ["history"],
+};
 
 async function remove() {
   console.log("removing");
@@ -54,4 +54,5 @@ document.querySelector("#remove").addEventListener("click", remove);
 
 {{WebExtExamples}}
 
-> **Note:** This API is based on Chromium's [`chrome.permissions`](https://developer.chrome.com/docs/extensions/reference/permissions/) API.
+> [!NOTE]
+> This API is based on Chromium's [`chrome.permissions`](https://developer.chrome.com/docs/extensions/reference/api/permissions) API.

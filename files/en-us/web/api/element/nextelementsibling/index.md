@@ -10,7 +10,7 @@ browser-compat: api.Element.nextElementSibling
 
 The **`Element.nextElementSibling`** read-only
 property returns the element immediately following the specified one in its parent's
-children list, or `null` if the specified element is the last one in the list.
+{{domxref("Element.children", "children")}} list, or `null` if the specified element is the last one in the list.
 
 ## Value
 
@@ -34,7 +34,7 @@ A {{domxref("Element")}} object, or `null`.
 
 This example outputs the following into the console when it loads:
 
-```
+```plain
 Siblings of div-01:
 DIV
 SCRIPT

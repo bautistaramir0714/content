@@ -17,11 +17,13 @@ The **`Date.UTC()`** static method accepts parameters representing the date and 
 Date.UTC(year)
 Date.UTC(year, monthIndex)
 Date.UTC(year, monthIndex, day)
-Date.UTC(year, monthIndex, day, hour)
-Date.UTC(year, monthIndex, day, hour, minute)
-Date.UTC(year, monthIndex, day, hour, minute, second)
-Date.UTC(year, monthIndex, day, hour, minute, second, millisecond)
+Date.UTC(year, monthIndex, day, hours)
+Date.UTC(year, monthIndex, day, hours, minutes)
+Date.UTC(year, monthIndex, day, hours, minutes, seconds)
+Date.UTC(year, monthIndex, day, hours, minutes, seconds, milliseconds)
 ```
+
+### Parameters
 
 - `year`
   - : Integer value representing the year. Values from `0` to `99` map to the years `1900` to `1999`. All other values are the actual year. See the [example](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).

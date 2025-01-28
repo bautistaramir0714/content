@@ -1,6 +1,7 @@
 ---
 title: set:intersection()
 slug: Web/EXSLT/set/intersection
+page-type: exslt-function
 ---
 
 {{XSLTRef}}{{QuickLinksWithSubpages("/en-US/docs/Web/EXSLT")}}
@@ -13,14 +14,14 @@ slug: Web/EXSLT/set/intersection
 set:intersection(nodeSet1, nodeSet2)
 ```
 
-### Arguments
+### Parameters
 
 - `nodeSet1`
   - : The first node-set.
 - `nodeSet2`
   - : The second node-set.
 
-### Returns
+### Return value
 
 A node-set containing the nodes that existed in both `nodeSet1` and in `nodeSet2`.
 

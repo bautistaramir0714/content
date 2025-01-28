@@ -38,7 +38,7 @@ ndef
     console.log("Scan started successfully.");
     ndef.onreadingerror = (event) => {
       console.log(
-        "Error! Cannot read data from the NFC tag. Try a different one?"
+        "Error! Cannot read data from the NFC tag. Try a different one?",
       );
     };
     ndef.onreading = (event) => {
@@ -60,4 +60,4 @@ ndef
 
 ## See also
 
-- {{DOMxRef("NDEFReader.readingerror_event")}}
+- {{DOMxRef("NDEFReader.readingerror_event", "readingerror")}} event

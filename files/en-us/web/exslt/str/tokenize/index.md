@@ -1,6 +1,7 @@
 ---
 title: str:tokenize()
 slug: Web/EXSLT/str/tokenize
+page-type: exslt-function
 ---
 
 {{XSLTRef}}{{QuickLinksWithSubpages("/en-US/docs/Web/EXSLT")}}
@@ -20,7 +21,7 @@ str:tokenize(string, delimiters)
 - `delimiters`
   - : Each character in this string is used as a word separator while tokenizing.
 
-### Returns
+### Return value
 
 A node-set of `token` elements, each containing one token from the `string`.
 

@@ -54,7 +54,8 @@ Next, create the "icons" directory inside the "buttons" directory, and save the 
 
 !["32 pixel icon of a lined sheet of paper"](page-32.png)
 
-> **Note:** These icons are from the [bitsies!](https://www.iconfinder.com/iconsets/bitsies) iconset created by Recep Kütük.
+> [!NOTE]
+> These icons are from the [bitsies!](https://www.iconfinder.com/iconsets/bitsies) iconset created by Recep Kütük.
 
 We have two icons so we can use the bigger one in high-density displays. The browser will take care of selecting the best icon for the current display.
 
@@ -116,7 +117,7 @@ We've made two changes from the original:
 So now we need to create that popup. Create a directory called "popup" then create a file called "choose_page.html" inside it. Give it the following contents:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -175,7 +176,7 @@ In our JavaScript, we listen for clicks on the popup choices. We first check to 
 
 The extension's final structure should look like this:
 
-```
+```plain
 button/
     icons/
         page-16.png
@@ -203,13 +204,13 @@ While browser actions are always shown, page actions are only shown in tabs wher
 - [`browserAction`](/en-US/docs/Mozilla/Add-ons/WebExtensions/API/browserAction) API
 - Browser action examples:
 
-  - [beastify](https://github.com/mdn/webextensions-examples/tree/master/beastify)
-  - [Bookmark it!](https://github.com/mdn/webextensions-examples/tree/master/bookmark-it)
-  - [favourite-colour](https://github.com/mdn/webextensions-examples/tree/master/favourite-colour)
-  - [open-my-page-button](https://github.com/mdn/webextensions-examples/tree/master/open-my-page-button)
+  - [beastify](https://github.com/mdn/webextensions-examples/tree/main/beastify)
+  - [Bookmark it!](https://github.com/mdn/webextensions-examples/tree/main/bookmark-it)
+  - [favourite-colour](https://github.com/mdn/webextensions-examples/tree/main/favourite-colour)
+  - [open-my-page-button](https://github.com/mdn/webextensions-examples/tree/main/open-my-page-button)
 
 - [`page_action`](/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/page_action) manifest key
 - [`pageAction`](/en-US/docs/Mozilla/Add-ons/WebExtensions/API/pageAction) API
 - Page action examples:
 
-  - [chill-out](https://github.com/mdn/webextensions-examples/tree/master/chill-out)
+  - [chill-out](https://github.com/mdn/webextensions-examples/tree/main/chill-out)

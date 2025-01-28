@@ -52,7 +52,9 @@ In this example, when the `font-family` descriptor is used in the [@font-palette
 @import url(https://fonts.googleapis.com/css2?family=Bungee+Spice);
 @font-palette-values --bungee-extra-spicy {
   font-family: "Bungee Spice";
-  override-colors: 0 DarkRed, 1 Red;
+  override-colors:
+    0 DarkRed,
+    1 Red;
 }
 
 h2 {
@@ -109,7 +111,6 @@ h2 {
 
 - {{cssxref("@font-face/font-family", "font-family")}}
 - {{cssxref("@font-palette-values/", "@font-palette-values")}}
-- {{cssxref("@font-palette-values/font-family", "font-family")}} descriptor
 - {{cssxref("@font-palette-values/override-colors", "override-colors")}} descriptor
 - {{cssxref("font-palette/", "font-palette")}} property
 - {{domxref("CSSFontPaletteValuesRule.fontFamily")}}

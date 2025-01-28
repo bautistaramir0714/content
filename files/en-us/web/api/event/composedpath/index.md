@@ -6,7 +6,7 @@ page-type: web-api-instance-method
 browser-compat: api.Event.composedPath
 ---
 
-{{APIRef("Shadow DOM")}}
+{{APIRef("Shadow DOM")}}{{AvailableInWorkers}}
 
 The **`composedPath()`** method of the {{domxref("Event")}}
 interface returns the event's path which is an array of the objects on which listeners
@@ -50,7 +50,7 @@ customElements.define(
       const shadowRoot = this.attachShadow({ mode: "open" });
       shadowRoot.appendChild(pElem);
     }
-  }
+  },
 );
 
 customElements.define(
@@ -65,7 +65,7 @@ customElements.define(
       const shadowRoot = this.attachShadow({ mode: "closed" });
       shadowRoot.appendChild(pElem);
     }
-  }
+  },
 );
 ```
 

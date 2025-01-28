@@ -1,11 +1,13 @@
 ---
 title: WAI ARIA Live Regions/API Support
 slug: Mozilla/Firefox/Releases/3/WAI_ARIA_Live_Regions_API_Support
+page-type: guide
 ---
 
 {{FirefoxSidebar}}
 
-> **Warning:** These notes are for developers of screen readers. Developers should use the [ARIA live regions developer documentation](/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions).
+> [!WARNING]
+> These notes are for developers of screen readers. Developers should use the [ARIA live regions developer documentation](/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions).
 
 Firefox 3 contains important improvements to the way the Mozilla engine exposes live changes in a document.
 

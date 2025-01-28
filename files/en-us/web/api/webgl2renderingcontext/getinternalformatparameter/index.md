@@ -6,7 +6,7 @@ page-type: web-api-instance-method
 browser-compat: api.WebGL2RenderingContext.getInternalformatParameter
 ---
 
-{{APIRef("WebGL")}}
+{{APIRef("WebGL")}}{{AvailableInWorkers}}
 
 The **`WebGL2RenderingContext.getInternalformatParameter()`**
 method of the [WebGL 2 API](/en-US/docs/Web/API/WebGL_API) returns
@@ -52,7 +52,7 @@ Depends on the requested information (as specified with `pname`). It is an
 const samples = gl.getInternalformatParameter(
   gl.RENDERBUFFER,
   gl.RGBA8,
-  gl.SAMPLES
+  gl.SAMPLES,
 );
 ```
 

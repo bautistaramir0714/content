@@ -1,6 +1,7 @@
 ---
 title: Creating and triggering events
 slug: Web/Events/Creating_and_triggering_events
+page-type: guide
 ---
 
 This article demonstrates how to create and dispatch DOM events. Such events are commonly called **synthetic events**, as opposed to the events fired by the browser itself.
@@ -18,7 +19,7 @@ elem.addEventListener(
   (e) => {
     /* … */
   },
-  false
+  false,
 );
 
 // Dispatch the event.
@@ -55,7 +56,7 @@ The older approach to creating events uses APIs inspired by Java. The following 
 const event = document.createEvent("Event");
 
 // Define that the event name is 'build'.
-event.initEvent("build", true, true);
+event.initEvent("build");
 
 // Listen for the event.
 elem.addEventListener(
@@ -63,7 +64,7 @@ elem.addEventListener(
   (e) => {
     // e.target matches elem
   },
-  false
+  false,
 );
 
 // target can be any Element or other EventTarget.
@@ -120,7 +121,7 @@ textarea.addEventListener("input", function () {
     new CustomEvent("awesome", {
       bubbles: true,
       detail: { text: () => textarea.value },
-    })
+    }),
   );
 });
 ```
@@ -159,7 +160,7 @@ function simulateClick() {
 
 <section id="Quick_links">
   <ol>
-    <li><a href="/en-US/docs/Learn/JavaScript/Building_blocks/Events">Introduction to events</a></li>
+    <li><a href="/en-US/docs/Learn_web_development/Core/Scripting/Events">Introduction to events</a></li>
     <li><a href="/en-US/docs/Web/Events/Event_handlers">Event handlers (overview)</a></li>
     <li><a href="/en-US/docs/Web/Events">Event reference</a></li>
   </ol>

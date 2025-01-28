@@ -67,7 +67,7 @@ An **accessor descriptor** also has the following optional keys:
 
 If a descriptor doesn't have any of the `value`, `writable`, `get`, and `set` keys, it is treated as a data descriptor. If a descriptor has both \[`value` or `writable`] and \[`get` or `set`] keys, an exception is thrown.
 
-These attributes are not necessarily the descriptor's own properties. Inherited properties will be considered as well. In order to ensure these defaults are preserved, you might freeze existing objects in the descriptor object's prototype chain upfront, specify all options explicitly, or point to [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) with {{jsxref("Object.create", "Object.create(null)")}}.
+These attributes are not necessarily the descriptor's own properties. Inherited properties will be considered as well. In order to ensure these defaults are preserved, you might freeze existing objects in the descriptor object's prototype chain upfront, specify all options explicitly, or create a [`null`-prototype object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototype_objects).
 
 ```js
 const obj = {};
@@ -203,7 +203,7 @@ console.log(o.a); // 37; the assignment didn't work
 
 #### Enumerable attribute
 
-The `enumerable` property attribute defines whether the property is considered by {{jsxref("Object.assign()")}} or the [spread](/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) operator. For non-{{jsxref("Global_Objects/Symbol", "Symbol")}} properties, it also defines whether it shows up in a {{jsxref("Statements/for...in", "for...in")}} loop and {{jsxref("Object.keys()")}} or not. For more information, see [Enumerability and ownership of properties](/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties).
+The `enumerable` property attribute defines whether the property is considered by {{jsxref("Object.assign()")}} or the [spread](/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) operator. For non-{{jsxref("Symbol")}} properties, it also defines whether it shows up in a {{jsxref("Statements/for...in", "for...in")}} loop and {{jsxref("Object.keys()")}} or not. For more information, see [Enumerability and ownership of properties](/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties).
 
 ```js
 const o = {};
@@ -412,20 +412,20 @@ const pattern = {
     return "I always return this string, whatever you have assigned";
   },
   set() {
-    this.myname = "this is my name string";
+    this.myName = "this is my name string";
   },
 };
 
 function TestDefineSetAndGet() {
-  Object.defineProperty(this, "myproperty", pattern);
+  Object.defineProperty(this, "myProperty", pattern);
 }
 
 const instance = new TestDefineSetAndGet();
-instance.myproperty = "test";
-console.log(instance.myproperty);
+instance.myProperty = "test";
+console.log(instance.myProperty);
 // I always return this string, whatever you have assigned
 
-console.log(instance.myname); // this is my name string
+console.log(instance.myName); // this is my name string
 ```
 
 ### Inheritance of properties

@@ -1,6 +1,7 @@
 ---
 title: str:split()
 slug: Web/EXSLT/str/split
+page-type: exslt-function
 ---
 
 {{XSLTRef}}{{QuickLinksWithSubpages("/en-US/docs/Web/EXSLT")}}
@@ -20,7 +21,7 @@ str:split(string, pattern)
 - `pattern`
   - : The pattern indicating where to split the string.
 
-### Returns
+### Return value
 
 A node-set of `token` elements, each containing one token from the `string`.
 

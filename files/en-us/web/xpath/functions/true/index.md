@@ -1,26 +1,27 @@
 ---
 title: "true"
 slug: Web/XPath/Functions/true
+page-type: xpath-function
 ---
 
 {{XsltSidebar}}
 
 The `true` function returns a boolean value of true.
 
-### Syntax
+## Syntax
 
-```
+```plain
 true()
 ```
 
-### Returns
+### Return value
 
 Boolean `true`.
 
-### Defined
+## Specifications
 
 [XPath 1.0 4.3](https://www.w3.org/TR/1999/REC-xpath-19991116/#function-true)
 
-### Gecko support
+## Gecko support
 
 Supported.

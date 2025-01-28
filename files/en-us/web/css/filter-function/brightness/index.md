@@ -38,9 +38,9 @@ brightness(2) /* Brightness of input is doubled */
 brightness(200%)
 ```
 
-### Formal syntax
+## Formal syntax
 
-{{csssyntax}}
+{{CSSSyntax}}
 
 ## Examples
 
@@ -106,7 +106,9 @@ p {
   background-color: magenta;
   color: palegoldenrod;
   border: 1em solid rebeccapurple;
-  box-shadow: inset -5px -5px red, 5px 5px yellow;
+  box-shadow:
+    inset -5px -5px red,
+    5px 5px yellow;
   padding: 0.25rem;
   font-size: 1.25rem;
   font-family: sans-serif;
@@ -124,7 +126,7 @@ p {
 
 ### Applying brightness using the url() SVG brightness filter
 
-The SVG {{SVGElement("filter")}} element is used to define custom filter effects that can then be referenced by [`id`](/en-US/docs/Web/HTML/Global_attributes#id). The `<filter>` element's {{SVGElement("feComponentTransfer")}} primitive enables pixel-level color remapping.
+The SVG {{SVGElement("filter")}} element is used to define custom filter effects that can then be referenced by [`id`](/en-US/docs/Web/HTML/Global_attributes/id). The `<filter>` element's {{SVGElement("feComponentTransfer")}} primitive enables pixel-level color remapping.
 
 In this example, to create a filter that darkens the content on which it is applied by 25% (i.e., 75% of the original brightness), the `slope` attribute is set to `0.75`. We can then reference the filter by `id`.
 
@@ -172,15 +174,22 @@ In the images below, the first one has a `brightness()` filter function applied,
   </thead>
   <tbody>
     <tr>
-      <td><img class="filter" src="flag.jpg" alt="darkened pride flag" /></td>
       <td>
         <img
-          style="filter: url(#darken25)"
-          src="flag.jpg"
+          class="filter"
+          src="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
           alt="darkened pride flag" />
       </td>
       <td>
-        <img src="flag.jpg" alt="Pride flag" />
+        <img
+          style="filter: url(#darken25)"
+          src="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+          alt="darkened pride flag" />
+      </td>
+      <td>
+        <img
+          src="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+          alt="Pride flag" />
       </td>
     </tr>
   </tbody>
@@ -199,7 +208,7 @@ In the images below, the first one has a `brightness()` filter function applied,
 
 ## See also
 
-- [CSS filter effects](/en-US/docs/Web/CSS/Filter_Effects) module
+- [CSS filter effects](/en-US/docs/Web/CSS/CSS_filter_effects) module
 - The other {{cssxref("&lt;filter-function&gt;")}} functions available to be used in values of the {{cssxref("filter")}} and {{cssxref("backdrop-filter")}} properties include:
   - {{cssxref("filter-function/blur", "blur()")}}
   - {{cssxref("filter-function/contrast", "contrast()")}}

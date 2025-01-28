@@ -1,6 +1,7 @@
 ---
 title: math:highest()
 slug: Web/EXSLT/math/highest
+page-type: exslt-function
 ---
 
 {{XSLTRef}}{{QuickLinksWithSubpages("/en-US/docs/Web/EXSLT")}}
@@ -20,7 +21,7 @@ math:highest(nodeSet)
 - `nodeSet`
   - : The node-set whose highest value is to be returned.
 
-### Returns
+### Return value
 
 A result tree fragment consisting of copies of the nodes returned by [`math:max()`](/en-US/docs/Web/EXSLT/math/max).
 

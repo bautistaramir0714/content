@@ -8,12 +8,13 @@ status:
 browser-compat: api.GPU.wgslLanguageFeatures
 ---
 
-{{APIRef("WebGPU API")}}{{SeeCompatTable}}
+{{APIRef("WebGPU API")}}{{SeeCompatTable}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
 The **`wgslLanguageFeatures`** read-only property of the
 {{domxref("GPU")}} interface returns a {{domxref("WGSLLanguageFeatures")}} object that reports the [WGSL language extensions](https://gpuweb.github.io/gpuweb/wgsl/#language-extension) supported by the WebGPU implementation.
 
-> **Note:** Not all WGSL language extensions are available to WebGPU in all browsers that support the API. We recommend you thoroughly test any extensions you choose to use.
+> [!NOTE]
+> Not all WGSL language extensions are available to WebGPU in all browsers that support the API. We recommend you thoroughly test any extensions you choose to use.
 
 ## Value
 
@@ -22,24 +23,22 @@ A {{domxref("WGSLLanguageFeatures")}} object instance. This is a [setlike](/en-U
 ## Examples
 
 ```js
-async function init() {
-  if (!navigator.gpu) {
-    throw Error("WebGPU not supported.");
-  }
-
-  const wgslFeatures = navigator.gpu.wgslLanguageFeatures;
-
-  // Return the size of the set
-  console.log(wgslFeatures.size);
-
-  // Iterate through all the set values using values()
-  const valueIterator = wgslFeatures.values();
-  for (const value of valueIterator) {
-    console.log(value);
-  }
-
-  // ...
+if (!navigator.gpu) {
+  throw Error("WebGPU not supported.");
 }
+
+const wgslFeatures = navigator.gpu.wgslLanguageFeatures;
+
+// Return the size of the set
+console.log(wgslFeatures.size);
+
+// Iterate through all the set values using values()
+const valueIterator = wgslFeatures.values();
+for (const value of valueIterator) {
+  console.log(value);
+}
+
+// ...
 ```
 
 ## Specifications

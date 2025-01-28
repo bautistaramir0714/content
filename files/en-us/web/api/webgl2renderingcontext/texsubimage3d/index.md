@@ -6,7 +6,7 @@ page-type: web-api-instance-method
 browser-compat: api.WebGL2RenderingContext.texSubImage3D
 ---
 
-{{APIRef("WebGL")}}
+{{APIRef("WebGL")}}{{AvailableInWorkers}}
 
 The **`WebGL2RenderingContext.texSubImage3D()`** method of the
 [WebGL API](/en-US/docs/Web/API/WebGL_API) specifies a sub-rectangle of the
@@ -149,7 +149,7 @@ gl.texSubImage3D(
   1,
   gl.RGBA,
   gl.UNSIGNED_BYTE,
-  image
+  image,
 );
 ```
 

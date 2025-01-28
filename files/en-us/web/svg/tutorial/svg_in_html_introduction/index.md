@@ -15,7 +15,7 @@ This article and its associated example shows how to use inline [SVG](/en-US/doc
 To include an inline SVG in an HTML file, paste the entire SVG file into the HTML file.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
@@ -44,7 +44,7 @@ There are three attributes and one nested element worth noting:
 
 1. The [`viewBox`](/en-US/docs/Web/SVG/Attribute/viewBox) attribute establishes a logical coordinate system which the SVG picture's coordinates are relative to. In this case our picture is laid out in a 100 by 100 viewport.
 
-2. The [`preserveAspectRatio`](/en-US/docs/Web/SVG/Attribute/preserveAspectRatio) attribute specifies that the aspect ratio must be preserved by centering the picture in the available size, sizing to the maximum of the height or width and then cutting off any overflow.
+2. The [`preserveAspectRatio`](/en-US/docs/Web/SVG/Attribute/preserveAspectRatio) attribute specifies that the {{glossary("aspect ratio")}} must be preserved by centering the picture in the available size, sizing to the maximum of the height or width and then cutting off any overflow.
 
 3. Including [`role="img"`](/en-US/docs/Web/Accessibility/ARIA/Roles/img_role) ensures assistive technologies handle the SVG as an image.
 
@@ -56,13 +56,13 @@ When an SVG is included via an {{HTMLElement('img')}} element, the `alt` attribu
 
 If the image conveys more than a short title, include a longer description with the [`<desc>`](/en-US/docs/Web/SVG/Element/desc) element. The `<desc>` element provides an accessible, long-text description. Similar to `<title>` text, the text within the `<desc>` is not rendered to the screen.
 
-If the SVG can be labeled by visible text, reference that text with an [`aria-labelledby`](/en-US/docs/Web/accessibility/aria/attributes/aria-labelledby) attribute. Alternatively, include the `aria-labelledby` attribute with the [`id`](/en-US/docs/Web/SVG/Attribute/id) of the `<title>`.
+If the SVG can be labeled by visible text, reference that text with an [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) attribute. Alternatively, include the `aria-labelledby` attribute with the [`id`](/en-US/docs/Web/SVG/Attribute/id) of the `<title>`.
 
 ```html
 <svg viewBox="0 0 100 125" role="img" aria-labelledby="svgTitle svgDescription">
   <title id="svgTitle">Manual</title>
   <desc id="svgDescription">
-    A non-descript twelve page booklet opened to the middle page
+    A nondescript twelve page booklet opened to the middle page
   </desc>
   <defs>
     <style>
@@ -119,7 +119,7 @@ If the SVG can be labeled by visible text, reference that text with an [`aria-la
 </svg>
 ```
 
-If the SVG can be described by visible text, that text can be referenced with the [`aria-describedby`](/en-US/docs/Web/accessibility/aria/attributes/aria-describedby) attribute. If aria-describedby is used, it will take precedence over `<desc>`.
+If the SVG can be described by visible text, that text can be referenced with the [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) attribute. If aria-describedby is used, it will take precedence over `<desc>`.
 
 In our example, we've included both the description and title in our `aria-labelledby` attribute, as it has better assistive technology support than `aria-describedby`.
 

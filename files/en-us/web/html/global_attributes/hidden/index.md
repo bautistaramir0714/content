@@ -29,8 +29,8 @@ Thus, all the following set the element to the [_hidden_](#the_hidden_state) sta
 
 ```html
 <span hidden>I'm hidden</span>
-<span hidden="hidden">I'm also hidden</span>
-<span hidden="something else">I'm hidden too!</span>
+<span hidden="">I'm also hidden</span>
+<span hidden="hidden">I'm hidden too!</span>
 ```
 
 The following sets the element to the [_hidden until found_](#the_hidden_until_found_state) state:
@@ -70,7 +70,7 @@ Note that browsers typically implement _hidden until found_ using {{cssxref("con
 - the element will participate in page layout
 - margin, borders, padding, and background for the element will be rendered.
 
-Also, the element needs to be affected by [layout containment](/en-US/docs/Web/CSS/CSS_Containment) in order to be revealed. This means that if the element in the _hidden until found_ state has a `display` value of `none`, `contents`, or `inline`, then the element will not be revealed by find in page or fragment navigation.
+Also, the element needs to be affected by [layout containment](/en-US/docs/Web/CSS/CSS_containment) in order to be revealed. This means that if the element in the _hidden until found_ state has a `display` value of `none`, `contents`, or `inline`, then the element will not be revealed by find in page or fragment navigation.
 
 ## Examples
 
@@ -78,7 +78,7 @@ Also, the element needs to be affected by [layout containment](/en-US/docs/Web/C
 
 In this example we have:
 
-- Three {{HTMLElement("div")}} elements. The first and the third are not hidden, while the second has `hidden="until-found"`and `id="until-found-box"` attributes.
+- Three {{HTMLElement("div")}} elements. The first and the third are not hidden, while the second has `hidden="until-found"` and `id="until-found-box"` attributes.
 - A link whose target is the `"until-found-box"` fragment.
 
 The hidden until found element has a dotted red border and a gray background.
@@ -130,7 +130,7 @@ div#until-found-box {
 const untilFound = document.querySelector("#until-found-box");
 untilFound.addEventListener(
   "beforematch",
-  () => (untilFound.textContent = "I've been revealed!")
+  () => (untilFound.textContent = "I've been revealed!"),
 );
 ```
 

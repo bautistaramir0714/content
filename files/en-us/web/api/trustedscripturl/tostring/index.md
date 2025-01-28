@@ -6,7 +6,7 @@ page-type: web-api-instance-method
 browser-compat: api.TrustedScriptURL.toString
 ---
 
-{{DefaultAPISidebar("Trusted Types API")}}
+{{APIRef("Trusted Types API")}}{{AvailableInWorkers}}
 
 The **`toString()`** method of the {{domxref("TrustedScriptURL")}} interface returns a string which may safely inserted into an [injection sink](/en-US/docs/Web/API/Trusted_Types_API#injection_sinks).
 
@@ -30,7 +30,7 @@ The constant `sanitized` is an object created via a Trusted Types policy. The `t
 
 ```js
 const sanitized = scriptPolicy.createScriptURL(
-  "https://example.com/my-script.js"
+  "https://example.com/my-script.js",
 );
 console.log(sanitized.toString());
 ```
